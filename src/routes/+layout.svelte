@@ -1,5 +1,5 @@
 <script>
-	import './styles.css';
+	import '../app.scss';
 </script>
 
 <div class="app">
@@ -13,5 +13,8 @@
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
+		background-color: var(--color-surface);
+		background-image: var(--background-gradient);
+		background-attachment: fixed;
 	}
 </style>

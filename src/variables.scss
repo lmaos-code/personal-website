@@ -1,0 +1,18 @@
+/* Variables and mixins declared here will be available in all other SCSS files */
+:root {
+	--font-body: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--font-mono: 'Fira Mono', monospace;
+	--color-text: rgba(0, 0, 0, 0.7);
+	--color-primary: #345ca8;
+	--color-secondary: #f95e6e;
+	--color-primary-container: #fefeff;
+	--color-surface: #f8fdff;
+	--color-on-surface: #001f25;
+	--color-outline: #757780;
+	--column-width: 42rem;
+	--column-margin-top: 4rem;
+	--background-gradient: linear-gradient(120deg, #a6c0fe 0%, #f95e6e 100%);
+	font-family: var(--font-body);
+	color: rgba(0, 0, 0, 0.7);
+}

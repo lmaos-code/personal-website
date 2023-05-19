@@ -1,4 +1,6 @@
 <script lang="ts">
+	import './style.scss';
+
 	let speakerTexts = {
 		short: `Hey there! I'm Manuel Otto Santovenia, a Junior Cloud Engineer at R+V. Passionate about AI, ML, photography, software development, motorcycle rides, and sim racing. Check out my projects on <a href="https://github.com/lmaos-code">GitHub</a>. <br/>Let's chat and share our interests!`,
 		long: `Hello Hello! I'm Manuel Otto Santovenia, a Junior Cloud Engineer at R+V in Wiesbaden. I find myself constantly fascinated by the world of AI & ML, and I'm always on the lookout for new ways to leverage these technologies to solve complex problems. Whether it's exploring cutting-edge algorithms or tinkering with neural networks, I'm always eager to dive deep into the realm of artificial intelligence.<br/>
@@ -16,28 +18,31 @@
 	$: currentText = speakerTexts.short;
 </script>
 
-<section>
+<section class="BCard">
 	<div id="header">
 		<div>
 			<h1>LMAOS</h1>
-			<!--<p>Manuel Otto Santovenia</p>-->
 			<p>Software Engineer in Wiesbaden | Germany</p>
 		</div>
-		<img src="headshot.jpg" alt="Headshot of Manuel" />
+		<img src="img/headshot.jpg" alt="Headshot of Manuel" />
 	</div>
 	<div id="contacts">
-		<a href="https://github.com/lmaos-code"><img src="github.svg" alt="Github Logo" /></a>
-		<a href="https://instagram.com/manuel.png"><img src="instagram.svg" alt="Instagram Logo" /></a>
-		<a href="https://twitter.com/manuel_txt"><img src="twitter.svg" alt="Twitter Logo" /></a>
-		<a href="https://www.linkedin.com/in/lmaos/"><img src="linkedin.svg" alt="LinkedIn Logo" /></a>
-		<a href="mailto:code@lmaos.de"><img src="mail.svg" alt="Mail Link" /></a>
+		<a href="https://github.com/lmaos-code"><img src="svg/github.svg" alt="Github Logo" /></a>
+		<a href="https://instagram.com/manuel.png"
+			><img src="svg/instagram.svg" alt="Instagram Logo" /></a
+		>
+		<a href="https://twitter.com/manuel_txt"><img src="svg/twitter.svg" alt="Twitter Logo" /></a>
+		<a href="https://www.linkedin.com/in/lmaos/"
+			><img src="svg/linkedin.svg" alt="LinkedIn Logo" /></a
+		>
+		<a href="mailto:code@lmaos.de"><img src="svg/mail.svg" alt="Mail Link" /></a>
 	</div>
 	<div id="description">
 		<div id="descButtons">
 			<button on:click={() => selectText('short')}>short</button>
 			<button on:click={() => selectText('long')}>long</button>
+			<!--<button on:click={()=>selectText('speaker')}>speaker</button>-->
 		</div>
-		<!--<button on:click={()=>selectText('speaker')}>speaker</button>-->
 		<div id="descriptionText">
 			<p id="current">
 				{@html currentText}
@@ -45,55 +50,3 @@
 		</div>
 	</div>
 </section>
-
-<style>
-	#descButtons {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-evenly;
-		width: 80%;
-		margin: 0 auto;
-	}
-	section {
-		display: flex;
-		flex-direction: column;
-		padding: 3rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
-		border-radius: 30px;
-		background-color: #f7f7f7;
-		transition: height 600ms ease-out;
-	}
-
-	#description {
-		margin-top: 1.5rem;
-	}
-
-	#contacts {
-		margin-top: 3rem;
-		height: 3em;
-		flex-direction: row;
-		justify-content: space-evenly;
-		width: 100%;
-		display: flex;
-	}
-	#contacts img {
-		width: 2.5em;
-		height: 2.5em;
-		aspect-ratio: 1 / 1;
-	}
-	#header {
-		display: flex;
-		flex-direction: column;
-		/*justify-content: space-between;*/
-		align-items: center;
-	}
-	#header img {
-		width: 200px;
-		height: 200px;
-		border-radius: 50%;
-		aspect-ratio: 1 / 1;
-	}
-</style>
