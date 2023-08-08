@@ -1,1 +1,3 @@
-The Code needed to run on my personal website, currently more like a business-card
+# LMAOS
+
+This is the code behind my personal website, which I am currently using as a digital business card.
