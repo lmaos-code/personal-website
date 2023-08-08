@@ -1,14 +1,17 @@
 //styles for BusinessCard component
+h1{
+	text-align: center;
+}
+
 section.BCard {
 	display: flex;
 	flex-direction: column;
 	width: 90%;
 	max-width: 64rem;
-	margin: 5vw auto;
+	margin: 0px auto;
 	box-sizing: border-box;
 	border-radius: 30px;
 	gap: 1em;
-	transition: height 600ms ease-out;
 	background-color: var(--color-primary-container);
 }
 
@@ -29,7 +32,8 @@ section.BCard {
 	& div {
 		display: flex;
 		flex-direction: row;
-		justify-content: space-between;
+		justify-content: flex-end;
+		gap: 1em;
 		width: 80%;
 		margin: 0 auto;
 	}
@@ -50,7 +54,6 @@ section.BCard {
 	width: 90%;
 	margin: 0 auto;
 	padding-bottom: 2rem;
-	background-color: var(--color-primary-container);
 }
 
 #header img {
@@ -73,6 +76,9 @@ section.BCard {
 			justify-content: flex-start;
 			gap: 1em;
 		}
+	}
+	h1 {
+		text-align: left;
 	}
 }
 

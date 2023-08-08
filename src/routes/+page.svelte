@@ -7,16 +7,6 @@
 	<meta name="description" content="LMAOS e-business card" />
 </svelte:head>
 
-<section>
+<div id="container">
 	<BusinessCard />
-</section>
-
-<style>
-	section {
-		min-height: 100vh;
-		background-size: 100vw 100vh;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-</style>
+</div>
