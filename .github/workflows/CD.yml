@@ -1,6 +1,9 @@
 on:
   push:
-    - refs/tags/*
+    branches:
+      - main
+    tags:
+      - refs/tags/*
   workflow_dispatch:
 
 jobs:
