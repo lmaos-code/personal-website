@@ -26,5 +26,14 @@ module.exports = {
 				parser: '@typescript-eslint/parser'
 			}
 		}
+	],
+	ignores: [
+		'/package',
+		'.env',
+		'.env.*',
+		'!.env.example',
+		'pnpm-lock.yaml',
+		'package-lock.json',
+		'yarn.lock'
 	]
 };
