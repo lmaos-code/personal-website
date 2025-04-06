@@ -19,7 +19,7 @@ jobs:
         with:
           eslint: true
           prettier: true
-          continue_on_error: true
+          continue_on_error: false
       # add tests here
   build-release:
     needs: [check]
