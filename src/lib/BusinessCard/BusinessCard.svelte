@@ -2,17 +2,19 @@
 	import './style.scss';
 
 	let speakerTexts = {
-		short: `Hey there! I'm Manuel Otto Santovenia, a Junior Cloud Engineer at R+V. Passionate about AI, ML, photography, software development, motorcycle rides, and sim racing. Check out my projects on <a href="https://github.com/lmaos-code">GitHub</a>. <br/>Let's chat and share our interests!`,
-		long: `Hello Hello! I'm Manuel Otto Santovenia, a Junior Cloud Engineer at R+V in Wiesbaden. I find myself constantly fascinated by the world of AI & ML, and I'm always on the lookout for new ways to leverage these technologies to solve complex problems. Whether it's exploring cutting-edge algorithms or tinkering with neural networks, I'm always eager to dive deep into the realm of artificial intelligence.<br/>
-	In addition to my AI endeavors, I'm also passionate about photography. There's something magical about freezing a moment in time and capturing its essence through the lens. Whenever I have spare time, you'll often find me out and about, camera in hand, seeking the perfect shot.<br/>
-	When I'm not immersed in code or framing the world through my camera, I channel my technical skills into managing my Kubernetes homelab. It's like having my own miniature data center, where I can experiment with various deployments and configurations. The challenges of orchestrating containerized applications in a distributed environment truly excite me.<br/>
-	But it's not all work and no play for me! I have a need for speed, both on and off the digital track. Riding my motorcycle provides an exhilarating escape, where I can feel the wind in my face and experience the thrill of the open road. And when I'm not zipping through the streets, I satisfy my racing cravings through sim racing. Competing against others in virtual races allows me to push the limits of my driving skills and experience the adrenaline rush from the comfort of my own home.<br/>
-	If you're ever interested in discussing any of these topics or need some tech advice, don't hesitate to reach out. I'm always excited to connect with fellow enthusiasts and share knowledge.
-	Also, if you are interrested, check out my code on <a href="https://github.com/lmaos-code">GitHub</a>!`,
-		speaker: ''
+		short: `Hi, I'm Manuel Otto Santovenia, a Cloud Engineer at R+V. Outside of work, I'm fueled by passions for photography, design, building tiny software projects, learning, teaching and cycling. </br> 
+		As I like to create things that bring a little joy to people's day, check out my other projects on <a href="https://github.com/lmaos-code">GitHub</a> 🚀.`,
+		long: `'ello ello 👋🏾</br>
+		I'm Manuel Otto Santovenia, a Cloud Engineer at R+V running Cloud Infrastructure on Azure. Beyond my work photography allows me to capture moments and see the world through a different lens, while my interest in design fuels a constant appreciation for aesthetics and user experience. I also love the challenge and satisfaction of building tiny software projects – bringing digital ideas to life, one small step at a time. </br>
+		Learning is a continuous journey for me, and I'm currently in the process of completing my Master's degree. I also find great joy in sharing knowledge and helping others understand new concepts, whether it's teaching students or simply explaining a technical detail to a colleague. And when I need to clear my head and recharge, you'll likely find me out on my bike, exploring the world on two wheels.</br>
+		Ultimately, my goal is to create things, whether it's robust cloud infrastructure or a simple piece of software, that can make people smile or make their lives a little bit better. If you want to see this for yourself, you can checkout my <a href="https://github.com/lmaos-code">GitHub Profile</a>.</br>
+		Let’s chat 😊!`,
+		speaker: `This is  Manuel Otto Santovenia! Manuel is a Cloud Engineer by profession, but his passions extend far beyond the world of cloud computing. He's a passionate photographer and you’ll find him tinkering with design and building fun, small software projects.
+		</br>
+		He’s is a lifelong learner, currently pursuing his Master's degree, and loves sharing his knowledge with others, whether in a teaching environment or a casual conversation. And when he's not immersed in technology or studies, he enjoys exploring the world on his bike.'`
 	};
 
-	function selectText(text: 'short' | 'long' /*| 'speaker'*/) {
+	function selectText(text: 'short' | 'long' | 'speaker') {
 		currentText = speakerTexts[text];
 	}
 	$: currentText = speakerTexts.short;
@@ -31,17 +33,13 @@
 		<a href="https://instagram.com/manuel.png"
 			><img src="svg/instagram.svg" alt="Instagram Logo" /></a
 		>
-		<a href="https://twitter.com/manuel_txt"><img src="svg/twitter.svg" alt="Twitter Logo" /></a>
-		<a href="https://www.linkedin.com/in/lmaos/"
-			><img src="svg/linkedin.svg" alt="LinkedIn Logo" /></a
-		>
 		<a href="mailto:code@lmaos.de"><img src="svg/mail.svg" alt="Mail Link" /></a>
 	</div>
 	<div id="description">
 		<div id="descButtons">
 			<button on:click={() => selectText('short')}>short</button>
 			<button on:click={() => selectText('long')}>long</button>
-			<!--<button on:click={()=>selectText('speaker')}>speaker</button>-->
+			<button on:click={() => selectText('speaker')}>speaker</button>
 		</div>
 		<div id="descriptionText">
 			<p id="current">
