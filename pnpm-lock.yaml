@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 devDependencies:
+  '@eslint/js':
+    specifier: ^9.24.0
+    version: 9.24.0
   '@fontsource/fira-mono':
     specifier: ^4.5.10
     version: 4.5.10
@@ -44,6 +47,9 @@ devDependencies:
   eslint-plugin-svelte:
     specifier: ^3.5.1
     version: 3.5.1(eslint@9.24.0)(svelte@4.2.19)
+  globals:
+    specifier: ^16.0.0
+    version: 16.0.0
   prettier:
     specifier: ^2.8.8
     version: 2.8.8
@@ -68,6 +74,9 @@ devDependencies:
   typescript:
     specifier: ^5.1.6
     version: 5.1.6
+  typescript-eslint:
+    specifier: ^8.29.0
+    version: 8.29.0(eslint@9.24.0)(typescript@5.1.6)
   vite:
     specifier: ^5.0.0
     version: 5.4.17(sass@1.64.2)
@@ -1402,6 +1411,11 @@ packages:
     engines: {node: '>=18'}
     dev: true
 
+  /globals@16.0.0:
+    resolution: {integrity: sha512-iInW14XItCXET01CQFqudPOWP2jYMl7T+QRQT+UNcR/iQncN/F0UNpgd76iFkBPgNQb4+X3LV9tLJYzwh+Gl3A==}
+    engines: {node: '>=18'}
+    dev: true
+
   /graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
     dev: true
@@ -2105,6 +2119,22 @@ packages:
     engines: {node: '>= 0.8.0'}
     dependencies:
       prelude-ls: 1.2.1
+    dev: true
+
+  /typescript-eslint@8.29.0(eslint@9.24.0)(typescript@5.1.6):
+    resolution: {integrity: sha512-ep9rVd9B4kQsZ7ZnWCVxUE/xDLUUUsRzE0poAeNu+4CkFErLfuvPt/qtm2EpnSyfvsR0S6QzDFSrPCFBwf64fg==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    peerDependencies:
+      eslint: ^8.57.0 || ^9.0.0
+      typescript: '>=4.8.4 <5.9.0'
+    dependencies:
+      '@typescript-eslint/eslint-plugin': 8.29.0(@typescript-eslint/parser@8.29.0)(eslint@9.24.0)(typescript@5.1.6)
+      '@typescript-eslint/parser': 8.29.0(eslint@9.24.0)(typescript@5.1.6)
+      '@typescript-eslint/utils': 8.29.0(eslint@9.24.0)(typescript@5.1.6)
+      eslint: 9.24.0
+      typescript: 5.1.6
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /typescript@5.1.6:

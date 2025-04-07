@@ -17,7 +17,7 @@
 	function selectText(text: 'short' | 'long' | 'speaker') {
 		currentText = speakerTexts[text];
 	}
-	$: currentText = speakerTexts.short;
+	let currentText = speakerTexts.short;
 </script>
 
 <section class="BCard">

@@ -1,5 +1,5 @@
 name: Setup pnpm
-description: "Setup Node v18, pnpm, clone repo and install dependencies"
+description: 'Setup Node v18, pnpm, clone repo and install dependencies'
 
 runs:
   using: composite
@@ -24,8 +24,8 @@ runs:
     - name: Setup Node
       uses: actions/setup-node@v3
       with:
-        node-version: "18"
-        cache: "pnpm"
+        node-version: '22'
+        cache: 'pnpm'
 
     # install deps
     - name: Install dependencies
