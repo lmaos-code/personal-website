@@ -17,7 +17,7 @@
 	function selectText(text: 'short' | 'long' | 'speaker') {
 		currentText = speakerTexts[text];
 	}
-	let currentText = speakerTexts.short;
+	let currentText = $state(speakerTexts.short);
 </script>
 
 <section class="BCard">
@@ -37,9 +37,9 @@
 	</div>
 	<div id="description">
 		<div id="descButtons">
-			<button on:click={() => selectText('short')}>short</button>
-			<button on:click={() => selectText('long')}>long</button>
-			<button on:click={() => selectText('speaker')}>speaker</button>
+			<button onclick={() => selectText('short')}>short</button>
+			<button onclick={() => selectText('long')}>long</button>
+			<button onclick={() => selectText('speaker')}>speaker</button>
 		</div>
 		<div id="descriptionText">
 			<p id="current">
