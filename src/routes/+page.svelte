@@ -4,9 +4,9 @@
 
 <svelte:head>
 	<title>LMAOS</title>
-	<meta name="description" content="LMAOS e-business card" />
+	<meta name="description" content="Hey! You are cool." />
 </svelte:head>
 
-<div id="container">
+<div id="container" class="lg:w-5xl">
 	<BusinessCard />
 </div>
