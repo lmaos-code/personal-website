@@ -47,7 +47,23 @@
 		>
 		<a href="mailto:code@lmaos.de"><img src="svg/mail.svg" alt="E-Mail Logo" /></a>
 	</div>
-
+	<div class="mx-auto w-[80%]">
+		<a href="garden" class="hover:!no-underline">
+			<div
+				class="justify-between md:justify-evenly w-full flex flex-row bg-[#5f895d25] rounded-2xl min-h-[3em] p-3 pr-5 items-center"
+			>
+				<div>
+					<h2>Sometimes, I like to do some digital gardening</h2>
+					<p class="!mt-0 !mb-0.5">Come explore what I've been thinking about and cultivating.</p>
+				</div>
+				<div
+					class="size-13 items-center justify-center flex shrink-0 bg-[theme(--color-accent)] rounded-full"
+				>
+					<img src="svg/garden_white.svg" alt="flower" class="size-8" />
+				</div>
+			</div>
+		</a>
+	</div>
 	<div
 		id="description"
 		class="pt-[2em] w-full [&>div]:flex [&>div]:flex-row [&>div]:justify-evenly [&>div]:gap-[1em] [&>div]:w-[80%] [&>div]:m-[auto] [&>div]:flex-wrap md:py-[2em] md:[&>#descButtons]:w-[80%] md:[&>#descButtons]:justify-start"
