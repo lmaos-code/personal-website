@@ -31,15 +31,15 @@
 		</div>
 
 		<!-- Posts Section -->
-		<section class="space-y-6">
+		<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 			{#each posts as post}
-				<div class="bg-[var(--color-primary-container)] rounded-4xl overflow-hidden">
+				<div class="bg-[var(--color-primary-container)] rounded-4xl overflow-hidden h-full">
 					<Preview {...post} />
 				</div>
 			{/each}
 
 			{#if posts.length === 0}
-				<div class="bg-[var(--color-primary-container)] rounded-4xl p-8">
+				<div class="bg-[var(--color-primary-container)] rounded-4xl p-8 col-span-full">
 					<p class="text-lg opacity-70 text-center">No posts yet. Check back soon!</p>
 				</div>
 			{/if}
