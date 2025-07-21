@@ -47,7 +47,7 @@
 		>
 		<a href="mailto:code@lmaos.de"><img src="svg/mail.svg" alt="E-Mail Logo" /></a>
 	</div>
-	<div class="mx-auto w-[80%]">
+	<div class="mx-auto w-[80%] pt-4">
 		<a href="garden" class="hover:!no-underline">
 			<div
 				class="justify-between md:justify-evenly w-full flex flex-row bg-[#5f895d25] rounded-2xl min-h-[3em] p-3 pr-5 items-center"

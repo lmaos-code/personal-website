@@ -11,12 +11,14 @@
 	--sea-green: #5f895d;
 	--lavender-pink: #ecabc1;
 	--alabaster: #f4f1e9ff;
+	--alabaster-light: #fffbef;
 
 	--color-text: rgba(0, 0, 0, 0.7);
 	--color-primary: var(--sea-green);
 	--color-secondary: var(--cal-poly-green);
 	--color-accent: var(--lavender-pink);
 	--color-primary-container: var(--alabaster);
+	--color-nav: var(--alabaster-light);
 	--color-surface: #f8fdff;
 	--color-on-surface: #001f25;
 	--color-outline: #757780;

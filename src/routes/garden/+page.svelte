@@ -1,0 +1,48 @@
+<script lang="ts">
+	import Preview from '$lib/garden/preview.svelte';
+	import { getAllPosts } from '$lib/garden/posts';
+	import Nav from '$lib/garden/nav.svelte';
+
+	const posts = getAllPosts();
+</script>
+
+<svelte:head>
+	<title>Digital Garden | LMAOS</title>
+	<meta
+		name="description"
+		content="Welcome to my digital garden. Here I share my thoughts, learnings, and experiences."
+	/>
+</svelte:head>
+
+<div class="min-h-screen w-screen py-8">
+	<div class="w-[95%] max-w-7xl mx-auto px-4">
+		<!-- Header Card -->
+		<div class="bg-[var(--color-primary-container)] rounded-4xl overflow-hidden mb-8">
+			<!-- Navigation Header -->
+
+			<Nav />
+			<!-- Garden Introduction -->
+			<div class="p-6 pt-1.5 md:p-8 md:pt-1.5">
+				<p class="text-lg opacity-80">
+					Welcome to my digital garden. Here, I cultivate ideas, share learnings, and document my
+					journey through technology, design, and personal growth.
+				</p>
+			</div>
+		</div>
+
+		<!-- Posts Section -->
+		<section class="space-y-6">
+			{#each posts as post}
+				<div class="bg-[var(--color-primary-container)] rounded-4xl overflow-hidden">
+					<Preview {...post} />
+				</div>
+			{/each}
+
+			{#if posts.length === 0}
+				<div class="bg-[var(--color-primary-container)] rounded-4xl p-8">
+					<p class="text-lg opacity-70 text-center">No posts yet. Check back soon!</p>
+				</div>
+			{/if}
+		</section>
+	</div>
+</div>
