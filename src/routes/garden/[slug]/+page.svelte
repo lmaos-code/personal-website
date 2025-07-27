@@ -28,7 +28,7 @@
 		<!-- Post Content Card -->
 		<article class="bg-[var(--color-primary-container)] rounded-4xl overflow-hidden">
 			<!-- Navigation Header -->
-			<Nav title={''} backUrl={backURL} />
+			<Nav title="" backUrl={backURL} />
 			<div class="p-6 md:p-8">
 				<header class="mb-12">
 					<time class="text-sm opacity-70 block mb-4"
