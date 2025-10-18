@@ -26,6 +26,10 @@ jobs:
           continue_on_error: false
       - name: Build Project
         run: pnpm build
+      - name: Upload static files as artifact
+        uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
+        with:
+          path: build/
   push_to_pages:
     if: github.event_name == 'pull_request'
     needs: [check]
@@ -34,7 +38,7 @@ jobs:
       - name: deploy to gh-pages for review
         uses: actions/upload-pages-artifact@v4.0.0
         with:
-          path: build
+          path: build/
   publish:
     if: github.ref_name == 'main' && github.ref_type == 'branch'
     needs: [check]
