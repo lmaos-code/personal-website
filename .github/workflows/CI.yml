@@ -35,7 +35,7 @@ jobs:
   push_to_pages:
     if: github.event_name == 'pull_request'
     needs: [check]
-    runs-on: ubuntu-lates        
+    runs-on: ubuntu-latest
     steps:
       - name: deploy to gh-pages for review
         uses: actions/upload-pages-artifact@v4.0.0
