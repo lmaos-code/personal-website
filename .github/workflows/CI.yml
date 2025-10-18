@@ -38,8 +38,6 @@ jobs:
     steps:
       - name: deploy to gh-pages for review
         uses: actions/upload-pages-artifact@v4.0.0
-        with:
-          path: build/
   publish:
     if: github.ref_name == 'main' && github.ref_type == 'branch'
     needs: [check]
