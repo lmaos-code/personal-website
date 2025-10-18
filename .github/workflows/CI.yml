@@ -27,6 +27,7 @@ jobs:
       - name: Build Project
         run: pnpm build
       - name: Upload static files as artifact
+        id: deployment
         uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
         with:
           path: build/
@@ -34,10 +35,11 @@ jobs:
   push_to_pages:
     if: github.event_name == 'pull_request'
     needs: [check]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-lates        
     steps:
       - name: deploy to gh-pages for review
         uses: actions/upload-pages-artifact@v4.0.0
+        id: deployment
   publish:
     if: github.ref_name == 'main' && github.ref_type == 'branch'
     needs: [check]
