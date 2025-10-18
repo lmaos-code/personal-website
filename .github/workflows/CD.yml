@@ -3,26 +3,9 @@ on:
   push:
     tags:
       - v**
-  workflow_dispatch:
 
 jobs:
-  check:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup pnpm
-        uses: ./.github/actions/setup-pnpm
-      # - name: Audit
-      # run: pnpm audit
-      - name: Run linters
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint: true
-          prettier: true
-          continue_on_error: false
-      # add tests here
   build-release:
-    needs: [check]
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -33,13 +16,39 @@ jobs:
       - name: Build
         run: pnpm build
       - name: create tarball of build folder
-        run: tar -czf spa_website.tar.gz build
-      - name: Create release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
+        run: tar -czf lmaos_de.tar.gz build
+      - name: upload build artifacts
+        uses: actions/upload-artifact@v4
+        with: 
+            name: personal_website
+            path: lmaos_de.tar.gz
+  deploy-release:
+    needs: [build-release]
+    runs-on: ubuntu-latest
+    steps:
+      - name: download website
+        uses: actions/download-artifact@v5
         with:
-          files: |
-            spa_website.tar.gz
-          generate_release_notes: true
-          name: ${{ github.ref_name }}
-          tag_name: ${{ github.ref }}
+          name: personal_website
+      - name: scp
+        uses: appleboy/scp-action@v1.0.0 
+        with:
+          host: ${{ secrets.SSH_REMOTE_HOST }}
+          username: ${{ secrets.SSH_UNAME}}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: ${{ secrets.SSH_PORT }}
+          source: lmaos_de.tar.gz
+          target: website_latest.tar.gz
+      - name: deploy to page
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.SSH_REMOTE_HOST }}
+          username: ${{ secrets.SSH_UNAME}}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            mv prod previous
+            tar -xzf website_latest.tar.gz -C prod --strip-components=1
+            rm website_latest.tar.gz
+            
+            
