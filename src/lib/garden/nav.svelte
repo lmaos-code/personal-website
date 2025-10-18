@@ -1,4 +1,6 @@
 <script lang="ts">
+	import back_arrow from '$lib/assets/svg/back_arrow.svg';
+	import garden from '$lib/assets/svg/garden_white.svg';
 	export let title: string = "Manu's Digital Garden";
 	export let backUrl: string = '/';
 	export let backText: string = 'Home';
@@ -11,7 +13,7 @@
 			href={backUrl}
 			class="inline-flex items-center text-[var(--color-accent)] hover:opacity-80 transition-opacity whitespace-nowrap"
 		>
-			<img src="/svg/back_arrow.svg" class="size-3 mr-2" alt="Back Arrow" />
+			<img src={back_arrow} class="size-3 mr-2" alt="Back Arrow" />
 			<span class="font-medium">{backText}</span>
 		</a>
 
@@ -22,7 +24,7 @@
 		<div
 			class="size-8 bg-[theme(--color-accent)] rounded-full flex items-center justify-center shrink-0"
 		>
-			<img src="/svg/garden_white.svg" alt="Garden icon" class="size-5" />
+			<img src={garden} alt="Garden icon" class="size-5" />
 		</div>
 	</div>
 </nav>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import fwd_arrow from '$lib/assets/svg/forward_arrow.svg';
 	export let title: string;
 	export let slug: string;
 	export let excerpt: string;
@@ -25,7 +26,7 @@
 			<div class="flex items-center gap-2 text-[var(--color-accent)] font-medium mt-auto pt-4">
 				Read post
 				<img
-					src="svg/forward_arrow.svg"
+					src={fwd_arrow}
 					class="size-3 group-hover:translate-x-0.5 transition-transform"
 					alt="arrow"
 				/>

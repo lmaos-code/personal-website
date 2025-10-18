@@ -1,4 +1,9 @@
 <script lang="ts">
+	import headshot from '$lib/assets/img/headshot.jpg';
+	import github from '$lib/assets/svg/github.svg';
+	import mail from '$lib/assets/svg/mail.svg';
+	import instagram from '$lib/assets/svg/instagram.svg';
+	import garden from '$lib/assets/svg/garden_white.svg';
 	let speakerTexts = {
 		short: `Hi, I'm Manuel Otto Santovenia, a Cloud Engineer at R+V.<br>Outside of work, I'm fueled by passions for photography, design, building tiny software projects, learning, teaching and cycling. </br> 
 		As I like to create things that bring a little joy to people's day, check out my other projects on <a href="https://github.com/lmaos-code">GitHub</a> 🚀.`,
@@ -30,22 +35,16 @@
 			<h1 class="text-center my-[0.5em] md:text-left">LMAOS</h1>
 			<p>Software Engineer in Wiesbaden | Germany</p>
 		</div>
-		<img
-			src="img/headshot.jpg"
-			alt="Headshot of Manuel"
-			class="size-[200px] aspect-square rounded-full"
-		/>
+		<img src={headshot} alt="Headshot of Manuel" class="size-[200px] aspect-square rounded-full" />
 	</div>
 
 	<div
 		id="contacts"
 		class="h-[3em] flex flex-row justify-evenly items-center w-full box-border py-[2em] [&>a]:size-[2.5em] [&>a]:aspect-square"
 	>
-		<a href="https://github.com/lmaos-code"><img src="svg/github.svg" alt="Github Logo" /></a>
-		<a href="https://instagram.com/manuel.png"
-			><img src="svg/instagram.svg" alt="Instagram Logo" /></a
-		>
-		<a href="mailto:code@lmaos.de"><img src="svg/mail.svg" alt="E-Mail Logo" /></a>
+		<a href="https://github.com/lmaos-code"><img src={github} alt="Github Logo" /></a>
+		<a href="https://instagram.com/manuel.png"><img src={instagram} alt="Instagram Logo" /></a>
+		<a href="mailto:code@lmaos.de"><img src={mail} alt="E-Mail Logo" /></a>
 	</div>
 	<div class="mx-auto w-[80%] pt-4">
 		<a href="garden" class="hover:!no-underline">
@@ -54,12 +53,12 @@
 			>
 				<div>
 					<h2>Sometimes, I like to do some digital gardening</h2>
-					<p class="!mt-0 !mb-0.5">Come explore what I've been thinking about and cultivating.</p>
+					<p class="!mt-0 !mb-0.5">come explore what I've been thinking about and cultivating</p>
 				</div>
 				<div
 					class="size-13 items-center justify-center flex shrink-0 bg-[theme(--color-accent)] rounded-full"
 				>
-					<img src="svg/garden_white.svg" alt="flower" class="size-8" />
+					<img src={garden} alt="flower" class="size-8" />
 				</div>
 			</div>
 		</a>
