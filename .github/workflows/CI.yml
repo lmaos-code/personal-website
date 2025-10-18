@@ -50,6 +50,9 @@ jobs:
     needs: [check]
     runs-on: ubuntu-latest
     environment: publish
+    permissions:
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
     steps:
       - name: Disable GitHub Pages
         env:
