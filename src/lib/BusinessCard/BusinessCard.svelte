@@ -54,7 +54,7 @@
 			>
 				<div>
 					<h2>Sometimes, I like to do some digital gardening</h2>
-					<p class="!mt-0 !mb-0.5">Come explore what I've been thinking about and cultivating.</p>
+					<p class="!mt-0 !mb-0.5">come explore what I've been thinking about and cultivating</p>
 				</div>
 				<div
 					class="size-13 items-center justify-center flex shrink-0 bg-[theme(--color-accent)] rounded-full"
