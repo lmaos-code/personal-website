@@ -19,9 +19,9 @@ jobs:
         run: tar -czf lmaos_de.tar.gz build
       - name: upload build artifacts
         uses: actions/upload-artifact@v4
-        with: 
-            name: personal_website
-            path: lmaos_de.tar.gz
+        with:
+          name: personal_website
+          path: lmaos_de.tar.gz
   deploy-release:
     needs: [build-release]
     runs-on: ubuntu-latest
@@ -31,7 +31,7 @@ jobs:
         with:
           name: personal_website
       - name: scp
-        uses: appleboy/scp-action@v1.0.0 
+        uses: appleboy/scp-action@v1.0.0
         with:
           host: ${{ secrets.SSH_REMOTE_HOST }}
           username: ${{ secrets.SSH_UNAME}}
@@ -50,5 +50,3 @@ jobs:
             mv prod previous
             tar -xzf website_latest.tar.gz -C prod --strip-components=1
             rm website_latest.tar.gz
-            
-            
