@@ -30,6 +30,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
         with:
           path: build/
+          name: github-pages
   push_to_pages:
     if: github.event_name == 'pull_request'
     needs: [check]
