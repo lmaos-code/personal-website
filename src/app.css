@@ -1,3 +1,4 @@
+/* prettier-ignore */
 @import 'tailwindcss';
 
 @layer theme, base, components, utilities;
