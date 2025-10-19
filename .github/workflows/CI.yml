@@ -52,7 +52,8 @@ jobs:
     environment: publish
     permissions:
       pages: write 
-      administration: write
+      deployments: write
+      contents: write
     steps:
       - name: Disable GitHub Pages
         env:
