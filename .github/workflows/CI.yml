@@ -45,6 +45,8 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4.0.5
+        with:
+            preview: true
   publish:
     if: github.ref_name == 'main' && github.ref_type == 'branch'
     needs: [check]
@@ -52,8 +54,6 @@ jobs:
     environment: publish
     permissions:
       pages: write
-      deployments: write
-      contents: write
     steps:
       - name: Disable GitHub Pages
         env:
