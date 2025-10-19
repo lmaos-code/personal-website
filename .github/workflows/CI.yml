@@ -51,7 +51,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: publish
     permissions:
-      pages: write 
+      pages: write
       deployments: write
       contents: write
     steps:
