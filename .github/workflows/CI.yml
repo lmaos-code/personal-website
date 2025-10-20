@@ -53,6 +53,9 @@ jobs:
     runs-on: ubuntu-latest
     environment: publish
     steps:
+      - uses: actions/checkout@v3
+      - name: Setup pnpm
+        uses: ./.github/actions/setup-pnpm
       - name: create release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
