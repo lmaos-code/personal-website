@@ -4,6 +4,7 @@ interface Post {
 	excerpt: string;
 	date: string;
 	content: string;
+	pinned: boolean
 }
 
 // This will be filled by Vite's glob imports
@@ -42,13 +43,17 @@ for (const [path, content] of Object.entries(postFiles)) {
 			slug,
 			excerpt: metadata.excerpt || '',
 			date: metadata.date || new Date().toISOString().split('T')[0],
-			content: markdownContent
+			content: markdownContent,
+			pinned: metadata.pinned ? true: false
 		});
 	}
 }
 
 // Sort posts by date, most recent first
 posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+// if a post is supposed to be pinned, move it to the front
+posts.sort((a, b) => (b.pinned === a.pinned)? 0 : b.pinned? 1 : -1);
+
 
 export function getAllPosts(): Post[] {
 	return posts;

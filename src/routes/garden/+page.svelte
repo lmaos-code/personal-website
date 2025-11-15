@@ -19,7 +19,6 @@
 		<!-- Header Card -->
 		<div class="bg-[var(--color-primary-container)] rounded-4xl overflow-hidden mb-8">
 			<!-- Navigation Header -->
-
 			<Nav />
 			<!-- Garden Introduction -->
 			<div class="p-6 pt-1.5 md:p-8 md:pt-1.5">
