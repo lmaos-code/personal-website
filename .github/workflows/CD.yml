@@ -47,6 +47,6 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd personal_website
-            rm previous
+            rm -r previous || echo "true"
             mv prod previous
             mv build prod
