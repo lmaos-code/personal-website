@@ -39,7 +39,7 @@
 
 			{#if posts.length === 0}
 				<div
-					class="bg-[var(--color-primary-container)] rounded-4xl p-6 pt-1.5 md:p-8 md:pt-1.5 w-fullcol-span-full"
+					class="bg-[var(--color-primary-container)] rounded-4xl p-6 pt-1.5 md:p-8 md:pt-1.5 col-span-full"
 				>
 					<p class="text-lg opacity-70 text-center">No posts yet. Check back soon!</p>
 				</div>
