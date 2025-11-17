@@ -19,12 +19,12 @@
 </script>
 
 <svelte:head>
-	<title>{post.title} | LMAOS Digital Garden</title>
+	<title>{post.title} | lmaos</title>
 	<meta name="description" content={post.excerpt} />
 </svelte:head>
 
 <div class="min-h-screen w-full py-8">
-	<div class="w-[95%] max-w-4xl mx-auto px-4 pb-12">
+	<div class="max-w-7xl lg:w-7xl px-4 pb-12">
 		<!-- Post Content Card -->
 		<article class="bg-[var(--color-primary-container)] rounded-4xl overflow-hidden">
 			<!-- Navigation Header -->
