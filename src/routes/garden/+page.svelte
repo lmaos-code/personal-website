@@ -7,21 +7,21 @@
 </script>
 
 <svelte:head>
-	<title>Digital Garden | LMAOS</title>
+	<title>Digital Garden | lmaos</title>
 	<meta
 		name="description"
 		content="Welcome to my digital garden. Here I share my thoughts, learnings, and experiences."
 	/>
 </svelte:head>
 
-<div class="min-h-screen w-screen py-8">
-	<div class="w-[95%] max-w-7xl mx-auto px-4">
+<div class="min-h-screen w-full py-8">
+	<div class="max-w-7xl lg:w-7xl px-4">
 		<!-- Header Card -->
 		<div class="bg-[var(--color-primary-container)] rounded-4xl overflow-hidden mb-8">
 			<!-- Navigation Header -->
 			<Nav />
 			<!-- Garden Introduction -->
-			<div class="p-6 pt-1.5 md:p-8 md:pt-1.5">
+			<div class="p-6 pt-1.5 md:p-8 md:pt-1.5 w-full">
 				<p class="text-lg opacity-80">
 					Welcome to my digital garden. Here, I cultivate ideas, share learnings, and document my
 					journey through technology, design, and personal growth.
