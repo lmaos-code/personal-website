@@ -1,0 +1,12 @@
+apiVersion: v2
+name: personal-website
+description: A Helm chart for deploying lmaos.de
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+keywords:
+  - sveltekit
+  - spa
+  - personal-website
+maintainers:
+  - name: lmaos-code

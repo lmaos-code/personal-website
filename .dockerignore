@@ -1,0 +1,66 @@
+# Git
+.git
+.gitignore
+.github
+
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Testing
+coverage
+tests
+*.test.js
+*.spec.js
+playwright.config.ts
+
+# Build (will be built in Docker)
+.svelte-kit
+build
+.vercel
+.output
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+.env.production
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+README.md
+LICENSE
+*.md
+.editorconfig
+.prettierrc
+.eslintrc*
+eslint.config.mjs
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose*.yml
+
+# CI/Helm
+ci/helm
+ci/Dockerfile
+ci/.dockerignore
