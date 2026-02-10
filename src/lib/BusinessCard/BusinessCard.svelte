@@ -4,6 +4,7 @@
 	import mail from '$lib/assets/svg/mail.svg';
 	import instagram from '$lib/assets/svg/instagram.svg';
 	import garden from '$lib/assets/svg/garden_white.svg';
+	import { resolve } from '$app/paths';
 	let speakerTexts = {
 		short: `Hi, I'm Manuel Otto Santovenia, a Cloud Engineer at R+V.<br>Outside of work, I'm fueled by passions for photography, design, building tiny software projects, learning, teaching and cycling. </br> 
 		As I like to create things that bring a little joy to people's day, check out my other projects on <a href="https://github.com/lmaos-code">GitHub</a> 🚀.`,
@@ -47,7 +48,7 @@
 		<a href="mailto:code@lmaos.de"><img src={mail} alt="E-Mail Logo" /></a>
 	</div>
 	<div class="mx-auto w-[80%] pt-4">
-		<a href="garden" class="hover:!no-underline">
+		<a href={resolve(`/garden`)} class="hover:!no-underline">
 			<div
 				class="justify-between md:justify-evenly w-full flex flex-row bg-[#5f895d25] rounded-2xl min-h-[3em] p-3 pr-5 items-center"
 			>

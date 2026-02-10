@@ -26,6 +26,7 @@ jobs:
         with:
           eslint: true
           prettier: true
+          prettier_args: --config .prettierrc
           continue_on_error: false
       - name: Build Project
         run: pnpm build
