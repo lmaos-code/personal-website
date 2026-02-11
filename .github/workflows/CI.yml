@@ -86,11 +86,7 @@ jobs:
 
       - name: Get Next Version
         id: semver
-        uses: ietf-tools/semver-action@v1
-        with:
-          token: ${{ github.token }}
-          branch: main
-          noVersionBumpBehavior: warn
+        uses: thenativeweb/get-next-version@2.7.1
 
       - name: Set version for Helm
         id: helm_version
@@ -101,7 +97,7 @@ jobs:
             VERSION="${VERSION#v}"
           elif [[ "${{ github.event_name }}" == "pull_request" ]]; then
             # For PRs, use prerelease format with PR number
-            VERSION="${{ steps.semver.outputs.nextStrict}}-rc.${{ github.event.pull_request.number }}.${{ github.sha }}"
+            VERSION="${{ steps.semver.outputs.version}}-rc.${{ github.event.pull_request.number }}.${{ github.sha }}"
           fi
           echo "version=${VERSION}" >> $GITHUB_OUTPUT
           echo "Helm chart version: ${VERSION}"
