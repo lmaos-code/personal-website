@@ -45,7 +45,7 @@ jobs:
       packages: write
     outputs:
       image-tag: ${{ steps.meta.outputs.tags }}
-      chart-version: ${{ steps.chart-version.outputs.version }}
+      chart-version: ${{ steps.meta.outputs.version }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -84,21 +84,10 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - name: Generate chart version
-        id: chart-version
-        run: |
-          if [[ "${{ github.ref_type }}" == "tag" ]]; then
-            VERSION="${{ github.ref_name }}"
-          else
-            VERSION="0.1.0-${{ github.sha }}"
-          fi
-          echo "version=${VERSION}" >> $GITHUB_OUTPUT
-          echo "Chart version: ${VERSION}"
-
       - name: Update Helm chart version
         run: |
-          sed -i "s/^version:.*/version: ${{ steps.chart-version.outputs.version }}/" ci/helm/Chart.yaml
-          sed -i "s/^appVersion:.*/appVersion: \"${{ steps.chart-version.outputs.version }}\"/" ci/helm/Chart.yaml
+          sed -i "s/^version:.*/version: ${{ steps.meta.outputs.version }}/" ci/helm/Chart.yaml
+          sed -i "s/^appVersion:.*/appVersion: \"${{ steps.meta.outputs.version }}\"/" ci/helm/Chart.yaml
 
       - name: Install Helm
         uses: azure/setup-helm@v4
@@ -112,7 +101,7 @@ jobs:
       - name: Push Helm chart to GHCR
         run: |
           echo ${{ secrets.GITHUB_TOKEN }} | helm registry login ${{ env.REGISTRY }} --username ${{ github.actor }} --password-stdin
-          helm push helm-charts/personal-website-${{ steps.chart-version.outputs.version }}.tgz oci://${{ env.REGISTRY }}/${{ github.repository_owner }}/charts
+          helm push helm-charts/personal-website-${{ steps.meta.outputs.version }}.tgz oci://${{ env.REGISTRY }}/${{ github.repository_owner }}/charts
 
   push_to_pages:
     if: github.event_name == 'pull_request'
