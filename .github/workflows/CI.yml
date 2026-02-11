@@ -98,7 +98,9 @@ jobs:
           elif [[ "${{ github.event_name }}" == "pull_request" ]]; then
             # For PRs, use prerelease format with PR number
             VERSION="${{ steps.semver.outputs.version}}-rc.${{ github.event.pull_request.number }}.${{ github.sha }}"
-          fi
+          else
+            VERSION="${{ steps.semver.outputs.version }}"
+            fi
           echo "version=${VERSION}" >> $GITHUB_OUTPUT
           echo "Helm chart version: ${VERSION}"
 
