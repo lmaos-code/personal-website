@@ -16,7 +16,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
       - name: Setup pnpm
         uses: ./.github/actions/setup-pnpm
       # - name: Audit
@@ -48,7 +48,7 @@ jobs:
       chart-version: ${{ steps.helm_version.outputs.version }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
@@ -90,6 +90,7 @@ jobs:
         with:
           token: ${{ github.token }}
           branch: main
+          noVersionBumpBehavior: warn
 
       - name: Set version for Helm
         id: helm_version
@@ -146,7 +147,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: publish
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
       - name: Setup pnpm
         uses: ./.github/actions/setup-pnpm
       - name: create release
