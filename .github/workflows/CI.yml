@@ -84,45 +84,6 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - name: Get Next Version
-        id: semver
-        uses: thenativeweb/get-next-version@2.7.1
-
-      - name: Set version for Helm
-        id: helm_version
-        run: |
-          if [[ "${{ github.ref_type }}" == "tag" ]]; then
-            # For tags, use the tag name (strip 'v' prefix if present)
-            VERSION="${{ github.ref_name }}"
-            VERSION="${VERSION#v}"
-          elif [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            # For PRs, use prerelease format with PR number
-            VERSION="${{ steps.semver.outputs.version}}-rc.${{ github.event.pull_request.number }}.${{ github.sha }}"
-          else
-            VERSION="${{ steps.semver.outputs.version }}"
-            fi
-          echo "version=${VERSION}" >> $GITHUB_OUTPUT
-          echo "Helm chart version: ${VERSION}"
-
-      - name: Update Helm chart version
-        run: |
-          sed -i "s/^version:.*/version: ${{ steps.helm_version.outputs.version }}/" ci/helm/Chart.yaml
-          sed -i "s/^appVersion:.*/appVersion: \"${{ steps.helm_version.outputs.version }}\"/" ci/helm/Chart.yaml
-
-      - name: Install Helm
-        uses: azure/setup-helm@v4
-        with:
-          version: 'latest'
-
-      - name: Package Helm chart
-        run: |
-          helm package ci/helm -d helm-charts/
-
-      - name: Push Helm chart to GHCR
-        run: |
-          echo ${{ secrets.GITHUB_TOKEN }} | helm registry login ${{ env.REGISTRY }} --username ${{ github.actor }} --password-stdin
-          helm push helm-charts/personal-website-${{ steps.helm_version.outputs.version }}.tgz oci://${{ env.REGISTRY }}/${{ github.repository_owner }}/charts
-
   push_to_pages:
     if: github.event_name == 'pull_request'
     needs: [check]
