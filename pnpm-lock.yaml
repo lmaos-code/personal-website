@@ -60,9 +60,6 @@ importers:
       globals:
         specifier: ^16.0.0
         version: 16.5.0
-      prettier:
-        specifier: ^3.1.0
-        version: 3.8.1
       prettier-plugin-svelte:
         specifier: ^3.2.6
         version: 3.4.1(prettier@3.8.1)(svelte@5.50.1)
