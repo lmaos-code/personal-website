@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import back_arrow from '$lib/assets/svg/back_arrow.svg';
 	import garden from '$lib/assets/svg/garden_white.svg';
 	export let title: string = "Manu's Digital Garden";
@@ -10,8 +11,8 @@
 	<div class="max-w-7xl mx-auto grid grid-cols-[auto_1fr_auto] items-center gap-4">
 		<!-- Back button - fixed width -->
 		<a
-			href={backUrl}
 			class="inline-flex items-center text-[var(--color-accent)] hover:opacity-80 transition-opacity whitespace-nowrap"
+			href={resolve(backUrl)}
 		>
 			<img src={back_arrow} class="size-3 mr-2" alt="Back Arrow" />
 			<span class="font-medium">{backText}</span>

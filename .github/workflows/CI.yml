@@ -8,11 +8,15 @@ on:
     branches: [main]
   workflow_dispatch:
 
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
 jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
       - name: Setup pnpm
         uses: ./.github/actions/setup-pnpm
       # - name: Audit
@@ -22,6 +26,7 @@ jobs:
         with:
           eslint: true
           prettier: true
+          prettier_args: --config .prettierrc
           continue_on_error: false
       - name: Build Project
         run: pnpm build
@@ -31,6 +36,54 @@ jobs:
         with:
           path: build/
           name: github-pages
+
+  build_and_push_docker:
+    needs: [check]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    outputs:
+      image-tag: ${{ steps.meta.outputs.tags }}
+      chart-version: ${{ steps.helm_version.outputs.version }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata for Docker
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./ci/Dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
   push_to_pages:
     if: github.event_name == 'pull_request'
     needs: [check]
@@ -46,13 +99,14 @@ jobs:
         uses: actions/deploy-pages@v4.0.5
         with:
           preview: true
+
   publish:
     if: github.ref_name == 'main' && github.ref_type == 'branch'
     needs: [check]
     runs-on: ubuntu-latest
     environment: publish
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
       - name: Setup pnpm
         uses: ./.github/actions/setup-pnpm
       - name: create release
