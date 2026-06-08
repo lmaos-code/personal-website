@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  create:
     tags:
       - 'v*'
   pull_request:
@@ -44,7 +45,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      packages: write
+      packages: write;
     outputs:
       image-tag: ${{ steps.meta.outputs.tags }}
       chart-version: ${{ steps.helm_version.outputs.version }}
