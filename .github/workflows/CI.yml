@@ -27,7 +27,7 @@ jobs:
       - name: Run linters
         uses: wearerequired/lint-action@v2
         with:
-          autofix: true
+          auto_fix: true
           eslint: true
           prettier: true
           prettier_args: --config .prettierrc -c 
