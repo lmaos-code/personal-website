@@ -24,13 +24,13 @@ That kid really valued quality and curious software - he just didn't know that a
 
 ## 2. Ask for forgiveness instead of permission
 
-Of course, this is within reason.
-I have often had the experience, that when you go outside of the box you have been assigned, you and your peers reap the rewards.
+Of course, this is within reason.\
+I have often had the experience, that when you go outside of the box you have been assigned, you and your peers reap greater rewards, than any possible punishment.
 
 ## 3. Better; Together
 
 When being alone would mean to be better off, wouldn't everyone be doing it?
-Bringing together our viewpoints, ideas and reasoning makes our Output better.
+Bringing together our viewpoints, ideas and reasoning makes the thing we are working on better.
 
 ## 4. Not given, earned - every day
 
@@ -41,7 +41,7 @@ Neither age, experience nor your paygrade determine if you have the best Idea fo
 
 I fundamentally belief, that people develop a sense for corporate tomfoolery.
 Stop telling me you are a big family.
-Tell me you want me to occasionally work on the weekend.
+Tell me you want me to occasionally work on the weekend - well only if you want that. I' tell you what I can do for you then.
 
 # Work
 
@@ -88,16 +88,16 @@ When a team needs to agree, I prefer a small group of the most-informed people t
 I've had great success using [Systemic Consensing](https://en.wikipedia.org/wiki/Systemic_Consensing).
 I don't mean the formal ritual of scoring, but the principle of finding the path with the highest agreeableness.
 When using this, one must be wary of [design by committee](https://en.wikipedia.org/wiki/Design_by_committee).
-When I recognize we are movin in such a direction, I will retract my vote to avoid a watered-down, compromised solution.
+When I recognize we are moving in such a direction, I may adjust my vote to avoid a watered-down, compromised solution.
 I believe one strong, uncompromised solution (even one I dislike) is better than a mediocre compromise.
-In these moments, I am happy to [disagree and commit](https://en.wikipedia.org/wiki/Disagree_and_commit).
+In these moments, I am happy to [disagree and commit](https://en.wikipedia.org/wiki/Disagree_and_commit), which I have come to understand is difficult for people to understand.
 
 # Communicate
 
 ## The Best Way: In Person
 
-Let's grab a coffee.
-I wholeheartedly believe that in-person communication supercharges all other communication.
+Let's grab a coffee (Big specialty coffee nerd btw.).
+I wholeheartedly believe that in-person communication supercharges all subsequent other communication.
 This leads to far greater outcomes.
 When I first get to know you, I will try to get you a coffee and chat to you.
 
@@ -114,7 +114,7 @@ E-Mail culture often fails at this second part.
 ## My Preferred Channels (_In Order_)
 
 1. In Person / Workshop
-2. Short Messaging Service (e.g., Slack, Teams, SMS)
+2. Short Messaging Service (e.g., Slack, Teams, RCS)
 3. Call
 4. E-Mail
 
@@ -124,13 +124,13 @@ I wish I could say "be direct and to my face," but that doesn't really work for 
 I am still figuring out the optimal way to receive feedback.
 For thoughtful, heartfelt, or mission-critical feedback, I prefer it in written form.
 This gives me the time and space to reflect on it properly.
-I do this best when I am alone, usually in from of a notepad or keyboard.
+I do this best when I am alone, usually in front of a notepad or keyboard.
 Please afford me the time reflect after you give me the feedback.
-Either you will see a change in behaviour, or receive a direct response.
+You will either see a change in behaviour, or receive a direct response.
 
 ## A Note on Compliments
 
-From my time as a handball goalkeeper, I developed the notion that compliments made me perform worse.
+From my time as a handball goalkeeper (from to childhood to teenager), I developed the notion and could observe that compliments made me perform worse.
 I preferred praise to be directed at the team's effort, not just at me directly.
 I am not this strict anymore and can handle a compliment.
 However, I encourage you to also check if there are shoulders I am standing on.
@@ -140,7 +140,6 @@ If so, please share the flowers with them as well.
 
 This is a catch-all for things that don't fit elsewhere.
 
-- I am always up for a good coffee.
+- I am always up for a good coffee (esspecially specialty - let's talk 😊).
 - My humor can be a bit dry at times.
-- I appreciate puns and well-timed jokes.
-- The more I get to know you, the more I will start to swear
+- I appreciate puns and well-timed jokes and have been described to have a playfull way of working in general.
