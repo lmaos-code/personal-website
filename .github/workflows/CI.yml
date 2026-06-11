@@ -1,20 +1,18 @@
 name: CI
-
 on:
   push:
     branches:
       - main
   create:
     tags:
-      - 'v*'
+      - v*
   pull_request:
-    branches: [main]
+    branches:
+      - main
   workflow_dispatch:
-
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
-
 jobs:
   check:
     runs-on: ubuntu-latest
@@ -28,11 +26,8 @@ jobs:
         uses: EPMatt/reviewdog-action-prettier@v1.3.0
         with:
           reporter: github-pr-review
-      - name: Run linters
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint: true
-          continue_on_error: false
+      - name: Run eslint with reviewdog
+        uses: reviewdog/action-eslint@v1.34.0
       - name: Build Project
         run: pnpm build
       - name: Upload static files as artifact
@@ -41,10 +36,10 @@ jobs:
         with:
           path: build/
           name: github-pages
-
   build_and_push_docker:
     if: github.event_name == 'pull_request' || github.event_name == 'create'
-    needs: [check]
+    needs:
+      - check
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -57,14 +52,12 @@ jobs:
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
-
       - name: Log in to the Container registry
         uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Extract metadata for Docker
         id: meta
         uses: docker/metadata-action@v5
@@ -76,13 +69,10 @@ jobs:
             type=ref,event=pr
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
-
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
-
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
@@ -94,10 +84,10 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-
   push_to_pages:
     if: github.event_name == 'pull_request'
-    needs: [check]
+    needs:
+      - check
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -110,10 +100,10 @@ jobs:
         uses: actions/deploy-pages@v4.0.5
         with:
           preview: true
-
   publish:
     if: github.ref_name == 'main' && github.ref_type == 'branch'
-    needs: [check]
+    needs:
+      - check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
