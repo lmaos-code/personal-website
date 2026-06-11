@@ -24,12 +24,14 @@ jobs:
         uses: ./.github/actions/setup-pnpm
       # - name: Audit
       # run: pnpm audit
+      - name: Run Prettier with reviewdog
+        uses: EPMatt/reviewdog-action-prettier@v1.3.0
+        with:
+          reporter: github-pr-review
       - name: Run linters
         uses: wearerequired/lint-action@v2
         with:
           eslint: true
-          prettier: true
-          prettier_args: --config .prettierrc
           continue_on_error: false
       - name: Build Project
         run: pnpm build
@@ -41,6 +43,7 @@ jobs:
           name: github-pages
 
   build_and_push_docker:
+    if: github.event_name == 'pull_request' || github.event_name == 'create'
     needs: [check]
     runs-on: ubuntu-latest
     permissions:
@@ -112,9 +115,10 @@ jobs:
     if: github.ref_name == 'main' && github.ref_type == 'branch'
     needs: [check]
     runs-on: ubuntu-latest
-    environment: publish
     steps:
       - uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.PUBLISH_TOKEN }}
       - name: Setup pnpm
         uses: ./.github/actions/setup-pnpm
       - name: create release
