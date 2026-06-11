@@ -3,8 +3,8 @@
 	import github from '$lib/assets/svg/github.svg';
 	import mail from '$lib/assets/svg/mail.svg';
 	import instagram from '$lib/assets/svg/instagram.svg';
-	import garden from '$lib/assets/svg/garden_white.svg';
-	import { resolve } from '$app/paths';
+	// import garden from '$lib/assets/svg/garden_white.svg';
+	// import { resolve } from '$app/paths';
 	let speakerTexts = {
 		short: `Hi, I'm Manuel Otto Santovenia.<br>
 			I am currently working as a Cloud Engineer at R+V.<br>
