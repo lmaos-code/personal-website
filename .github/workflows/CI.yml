@@ -18,22 +18,20 @@ env:
 jobs:
   check:
     runs-on: ubuntu-latest
-    permissions:
-      workflows: create
     steps:
       - uses: actions/checkout@v5
       - name: Setup pnpm
         uses: ./.github/actions/setup-pnpm
       # - name: Audit
       # run: pnpm audit
+      - name: Run Prettier with reviewdog
+        uses: EPMatt/reviewdog-action-prettier@v1.3.0
+        with:   
+          reporter: github-pr-review
       - name: Run linters
         uses: wearerequired/lint-action@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          auto_fix: true
           eslint: true
-          prettier: true
-          prettier_args: --config .prettierrc -c 
           continue_on_error: false
       - name: Build Project
         run: pnpm build
