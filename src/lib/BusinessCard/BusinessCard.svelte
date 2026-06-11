@@ -39,7 +39,7 @@
 		class="flex flex-col items-center box-border rounded-4xl w-[90%] mx-[auto] pb-[2rem] mt md:py-[2em] md:flex-row md:justify-around"
 	>
 		<div>
-			<h1 class="text-center my-[0.5em] md:text-left">LMAOS</h1>
+			<h1 class="text-center my-[0.5em] md:text-left">lmaos</h1>
 			<p>Software Engineer in Wiesbaden | Germany</p>
 		</div>
 		<img src={headshot} alt="Headshot of Manuel" class="size-[200px] aspect-square rounded-full" />
