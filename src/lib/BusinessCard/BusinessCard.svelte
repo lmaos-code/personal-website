@@ -6,16 +6,22 @@
 	import garden from '$lib/assets/svg/garden_white.svg';
 	import { resolve } from '$app/paths';
 	let speakerTexts = {
-		short: `Hi, I'm Manuel Otto Santovenia, a Cloud Engineer at R+V.<br>Outside of work, I'm fueled by passions for photography, design, building tiny software projects, learning, teaching and cycling. </br> 
-		As I like to create things that bring a little joy to people's day, check out my other projects on <a href="https://github.com/lmaos-code">GitHub</a> 🚀.`,
+		short: `Hi, I'm Manuel Otto Santovenia.<br>
+			I am currently working as a Cloud Engineer at R+V.<br>
+			Outside of work, I'm fueled by passions for photography, design, building delightful software, teaching and cycling. </br>
+			I like to say that look to build software, that makes people smile, so if you want you can check out what I am building on <a href="https://github.com/lmaos-code">GitHub</a> 🚀.`,
 		long: `'ello ello 👋🏾 <br>
-		I'm Manuel Otto Santovenia, a Cloud Engineer at R+V running Cloud Infrastructure on Azure. Beyond my work photography allows me to capture moments and see the world through a different lens, while my interest in design fuels a constant appreciation for aesthetics and user experience. I also love the challenge and satisfaction of building tiny software projects – bringing digital ideas to life, one small step at a time. </br>
-		Learning is a continuous journey for me, and I'm currently in the process of completing my Master's degree. I also find great joy in sharing knowledge and helping others understand new concepts, whether it's teaching students or simply explaining a technical detail to a colleague. And when I need to clear my head and recharge, you'll likely find me out on my bike, exploring the world on two wheels.</br>
-		Ultimately, my goal is to create things, whether it's robust cloud infrastructure or a simple piece of software, that can make people smile or make their lives a little bit better. If you want to see this for yourself, you can checkout my <a href="https://github.com/lmaos-code">GitHub Profile</a>.</br>
-		Let’s chat 😊!`,
-		speaker: `This is  Manuel Otto Santovenia! Manuel is a Cloud Engineer by profession, but his passions extend far beyond the world of cloud computing. He's a passionate photographer and you’ll find him tinkering with design and building fun, small software projects.
-		<br>
-		He’s is a lifelong learner, currently pursuing his Master's degree, and loves sharing his knowledge with others, whether in a teaching environment or a casual conversation. And when he's not immersed in technology or studies, he enjoys exploring the world on his bike.`
+			I'm Manuel Otto Santovenia, a Cloud Engineer at R+V running Cloud Infrastructure.<br>
+			Beyond my work, I like capture moments of friends and close ones, always bringing a camera along.  
+			I also love the challenge and satisfaction of building tiny software projects - bringing digital ideas to life, one small step at a time. </br>
+			Learning is a continuous process for me, and I'm currently in the somewhat drawn out process of completing my Master's degree. 
+			I also find great joy in sharing knowledge and helping others understand new concepts, whether it's teaching students or simply explaining a technical detail to a colleague.
+			And when I need to clear my head and recharge, you'll likely find me out on my bike, exploring the world on two wheels.</br>
+			Ultimately, my goal is to create good things, whether it's robust cloud infrastructure or a simple piece of software, that can make people smile. If you want to see some of what I have been crafting for yourself, you can checkout my <a href="https://github.com/lmaos-code">GitHub Profile</a>.</br>
+			Let’s chat 😊!`,
+		speaker: `This is  Manuel Otto Santovenia! <br>
+			Manuel is a Cloud Engineer by profession, but his passions extend far beyond the world of cloud computing. He's a passionate photographer and you’ll find him tinkering with design and building fun, small software projects.<br>
+			He’s is a lifelong learner, currently pursuing his Master's degree, and loves sharing his knowledge with others, whether in a teaching environment or a casual conversation. And when he's not immersed in technology or studies, he enjoys exploring the world on his bike.`
 	};
 
 	function selectText(text: 'short' | 'long' | 'speaker') {
@@ -47,23 +53,23 @@
 		<a href="https://instagram.com/manuel.png"><img src={instagram} alt="Instagram Logo" /></a>
 		<a href="mailto:code@lmaos.de"><img src={mail} alt="E-Mail Logo" /></a>
 	</div>
-	<div class="mx-auto w-[80%] pt-4">
-		<a href={resolve(`/garden`)} class="hover:!no-underline">
-			<div
-				class="justify-between md:justify-evenly w-full flex flex-row bg-[#5f895d25] rounded-2xl min-h-[3em] p-3 pr-5 items-center"
-			>
-				<div>
-					<h2>Sometimes, I like to do some digital gardening</h2>
-					<p class="!mt-0 !mb-0.5">come explore what I've been thinking about and cultivating</p>
-				</div>
-				<div
-					class="size-13 items-center justify-center flex shrink-0 bg-[theme(--color-accent)] rounded-full"
-				>
-					<img src={garden} alt="flower" class="size-8" />
-				</div>
-			</div>
-		</a>
-	</div>
+	<!-- <div class="mx-auto w-[80%] pt-4"> -->
+	<!-- 	<a href={resolve(`/garden`)} class="hover:!no-underline"> -->
+	<!-- 		<div -->
+	<!-- 			class="justify-between md:justify-evenly w-full flex flex-row bg-[#5f895d25] rounded-2xl min-h-[3em] p-3 pr-5 items-center" -->
+	<!-- 		> -->
+	<!-- 			<div> -->
+	<!-- 				<h2>Sometimes, I like to do some digital gardening</h2> -->
+	<!-- 				<p class="!mt-0 !mb-0.5">come explore what I've been thinking about and cultivating</p> -->
+	<!-- 			</div> -->
+	<!-- 			<div -->
+	<!-- 				class="size-13 items-center justify-center flex shrink-0 bg-[theme(--color-accent)] rounded-full" -->
+	<!-- 			> -->
+	<!-- 				<img src={garden} alt="flower" class="size-8" /> -->
+	<!-- 			</div> -->
+	<!-- 		</div> -->
+	<!-- 	</a> -->
+	<!-- </div> -->
 	<div
 		id="description"
 		class="pt-[2em] w-full [&>div]:flex [&>div]:flex-row [&>div]:justify-evenly [&>div]:gap-[1em] [&>div]:w-[80%] [&>div]:m-[auto] [&>div]:flex-wrap md:py-[2em] md:[&>#descButtons]:w-[80%] md:[&>#descButtons]:justify-start"

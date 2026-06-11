@@ -23,8 +23,7 @@
 			<!-- Garden Introduction -->
 			<div class="p-6 pt-1.5 md:p-8 md:pt-1.5 w-full">
 				<p class="text-lg opacity-80">
-					Welcome to my digital garden. Here, I cultivate ideas, share learnings, and document my
-					journey through technology, design, and personal growth.
+					Welcome to my digital garden. Here, I cultivate ideas and document my journey.
 				</p>
 			</div>
 		</div>
