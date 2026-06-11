@@ -26,7 +26,7 @@ jobs:
       # run: pnpm audit
       - name: Run Prettier with reviewdog
         uses: EPMatt/reviewdog-action-prettier@v1.3.0
-        with:   
+        with:
           reporter: github-pr-review
       - name: Run linters
         uses: wearerequired/lint-action@v2
