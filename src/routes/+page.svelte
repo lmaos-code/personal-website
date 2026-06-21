@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>LMAOS</title>
+	<title>lmaos</title>
 	<meta name="description" content="Hey! You are cool." />
 </svelte:head>
 
