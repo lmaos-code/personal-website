@@ -9,10 +9,10 @@
 		short: `Hi, I'm Manuel Otto Santovenia.<br>
 			I am currently working as a Cloud Engineer at R+V.<br>
 			Outside of work, I'm fueled by passions for photography, design, building delightful software, teaching and cycling. </br>
-			I like to say that look to build software, that makes people smile, so if you want you can check out what I am building on <a href="https://github.com/lmaos-code">GitHub</a> 🚀.`,
+			I like to say that I look to build software, that makes people smile, so if you want you can check out what I am building on <a href="https://github.com/lmaos-code">GitHub</a> 🚀.`,
 		long: `'ello ello 👋🏾 <br>
 			I'm Manuel Otto Santovenia, a Cloud Engineer at R+V running Cloud Infrastructure.<br>
-			Beyond my work, I like capture moments of friends and close ones, always bringing a camera along.  
+			Beyond my work, I like to capture moments of friends and close ones, always bringing a camera along.  
 			I also love the challenge and satisfaction of building tiny software projects - bringing digital ideas to life, one small step at a time. </br>
 			Learning is a continuous process for me, and I'm currently in the somewhat drawn out process of completing my Master's degree. 
 			I also find great joy in sharing knowledge and helping others understand new concepts, whether it's teaching students or simply explaining a technical detail to a colleague.
